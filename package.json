@@ -1,0 +1,17 @@
+{
+  "name": "powerbi",
+  "private": true,
+  "version": "0.0.0",
+  "description": "",
+  "repository": "",
+  "license": "MIT",
+  "devDependencies": {
+    "bower": "^1.8.2",
+    "lr-http-server": "^0.1.5",
+    "request": "^2.83.0"
+  },
+  "scripts": {
+    "build": "node app/request.js",
+    "start": "lr-http-server -p 8080 -d ./app"
+  }
+}

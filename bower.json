@@ -1,0 +1,12 @@
+{
+  "name": "powerbi",
+  "description": "A starter project for AngularJS",
+  "version": "0.0.0",
+  "homepage": "https://github.com/angular/angular-seed",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "powerbi-client": "^2.4.2",
+    "jquery": "^3.2.1"
+  }
+}
