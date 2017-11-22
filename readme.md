@@ -28,6 +28,7 @@
     - [1. Registrar aplicativo no Azure](#1-registrar-aplicativo-no-azure)
     - [2. Aplicação demo no visual studio](#2-aplica%C3%A7%C3%A3o-demo-no-visual-studio)
   - [Exemplo de filtro na aplicação](#exemplo-de-filtro-na-aplica%C3%A7%C3%A3o)
+  - [Funções JS](#fun%C3%A7%C3%B5es-js)
   - [Erros Comuns](#erros-comuns)
 
 ## Instalação
