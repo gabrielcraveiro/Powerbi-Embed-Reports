@@ -27,6 +27,7 @@
   - [Instalação](#instala%C3%A7%C3%A3o)
     - [1. Registrar aplicativo no Azure](#1-registrar-aplicativo-no-azure)
     - [2. Aplicação demo no visual studio](#2-aplica%C3%A7%C3%A3o-demo-no-visual-studio)
+  - [Exemplo de filtro na aplicação](#exemplo-de-filtro-na-aplica%C3%A7%C3%A3o)
   - [Erros Comuns](#erros-comuns)
 
 ## Instalação
@@ -90,6 +91,57 @@ report.setFilters([{
       console.warn(er);
     });
 ```
+
+## Funções JS
+
+**Colocar filtro**: report.setFilters([{}])
+
+```js
+// Os filtros podem ser básicos ou avançados com condições
+report.setFilters([{
+      $schema: "http://powerbi.com/product/schema#advanced",
+      target: {
+        table: "Date",
+        column: "Month"
+      },
+      operator: "In",
+      values: ["March"]
+    }])
+```
+
+**Retornar filtros**: report.getFilters()
+```js
+report.getFilters()
+    .then(function (filters) {
+        console.log(filters);
+    })
+```
+
+**Mudar página:** report.setPage("ReportSection2") - Nome da página mesmo, não o de visualização
+
+**Remover página:** report.removeFilters()
+
+**Retornar páginas:** 
+
+```js
+
+report.getPages()
+    .then(function (pages) {
+        pages.forEach(function(page) {
+            var log = page.name + " - " + page.displayName;
+            console.log(log);
+        });
+    })
+
+```
+
+**Imprimir relatório:** report.print()
+
+**Entrar em fullscreen:** report.fullscreen()
+
+[Documentação](https://microsoft.github.io/PowerBI-JavaScript)
+
+[Funções](https://microsoft.github.io/PowerBI-JavaScript/demo/v2-demo/index.html#)
 
 ## Erros Comuns
 
