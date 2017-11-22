@@ -66,7 +66,7 @@ Baixar a pasta e entrar na pasta **App Owns Data** e abrir o projeto pelo Visual
 
 * reportId - ID do relatório que você deseja implementar.
 
-![](1.png)
+![](https://i.imgur.com/MiSlcdf.png)
 
 * pbiUsername - Admin do grupo escolhido (email)
 
