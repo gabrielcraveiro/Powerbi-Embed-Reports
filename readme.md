@@ -24,14 +24,10 @@
   </h3>
 </div>
 
-
-## Tabela de Conteúdo
-- [Instalação](#instalação)
-- [Registrar aplicativo no Azure](#1-registrar-aplicativo-no-azure)
-- [Aplicação demo no visual studio](#2-aplicação-demo-no-visual-studio)
-- [Erros comuns](#erros-comuns)
-<!-- - [RLS](#rls) -->
-<!-- - [Gerar token com JS](#gerar-token-com-javascript) -->
+  - [Instalação](#instala%C3%A7%C3%A3o)
+    - [1. Registrar aplicativo no Azure](#1-registrar-aplicativo-no-azure)
+    - [2. Aplicação demo no visual studio](#2-aplica%C3%A7%C3%A3o-demo-no-visual-studio)
+  - [Erros Comuns](#erros-comuns)
 
 ## Instalação
 
@@ -39,7 +35,7 @@ Para utilizar a api é necessário baixar a [aplicação demo](https://github.co
 
 Para realizar as filtragens é alterando o objeto criado  por javascript.
 
-### 1 Registrar aplicativo no Azure
+### 1. Registrar aplicativo no Azure
 
 Para utilizar a api é necessário registrar o app no [portal de dev do PowerBI](https://dev.powerbi.com/apps) como native app. É importante depois de registrar o aplicativo, entrar no portal do azure, procurar [Active Directory do Azure](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade) e realizar os seguintes passos:
 
@@ -55,7 +51,7 @@ Para utilizar a api é necessário registrar o app no [portal de dev do PowerBI]
 
 
 
-### 2 Aplicação demo no visual studio
+### 2. Aplicação demo no visual studio
 
 Baixar a pasta e entrar na pasta **App Owns Data** e abrir o projeto pelo Visual Studio. Altere os dados no arquivo **Web.config**.
 
@@ -73,6 +69,27 @@ Baixar a pasta e entrar na pasta **App Owns Data** e abrir o projeto pelo Visual
 * pbiPassword - senha do usuário escolhido
 
 Depois é só rodar o projeto (f5), e clicar em report. O relatório deve aparecer.
+
+## Exemplo de filtro na aplicação
+
+Para filtrar é usado um setFilter no relatório, seguindo o relatório da aplicação demo ficaria:
+
+```js
+report.setFilters([{
+      $schema: "http://powerbi.com/product/schema#advanced",
+      target: {
+        table: "Date",
+        column: "Month"
+      },
+      operator: "In",
+      values: ["March"]
+    }]).then(function (result) {
+      console.log("Filtrado com sucesso!");
+    })
+    .catch(function (er) {
+      console.warn(er);
+    });
+```
 
 ## Erros Comuns
 
